@@ -28,6 +28,5 @@ ros2 launch swarm_follow swarm_launch.py
 ## Limpar a compilacao
 
 ```bash
-cd ~/ros2_ws
 rm -rf build install log
 ```
