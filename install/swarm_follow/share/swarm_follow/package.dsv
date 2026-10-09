@@ -1,0 +1,9 @@
+source;share/swarm_follow/hook/pythonpath.ps1
+source;share/swarm_follow/hook/pythonpath.dsv
+source;share/swarm_follow/hook/pythonpath.sh
+source;share/swarm_follow/hook/ament_prefix_path.ps1
+source;share/swarm_follow/hook/ament_prefix_path.dsv
+source;share/swarm_follow/hook/ament_prefix_path.sh
+source;../../build/swarm_follow/share/swarm_follow/hook/pythonpath_develop.ps1
+source;../../build/swarm_follow/share/swarm_follow/hook/pythonpath_develop.dsv
+source;../../build/swarm_follow/share/swarm_follow/hook/pythonpath_develop.sh

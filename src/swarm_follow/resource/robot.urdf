@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<robot name="epuck">
+  <webots>
+    <plugin type="swarm_follow.robot_driver.RobotDriver" />
+  </webots>
+</robot>

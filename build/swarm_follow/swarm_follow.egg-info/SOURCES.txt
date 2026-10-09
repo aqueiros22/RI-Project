@@ -1,0 +1,17 @@
+package.xml
+setup.cfg
+setup.py
+launch/swarm_launch.py
+resource/robot.urdf
+resource/swarm_follow
+swarm_follow/__init__.py
+swarm_follow/follower_controller.py
+swarm_follow/robot_driver.py
+swarm_follow.egg-info/PKG-INFO
+swarm_follow.egg-info/SOURCES.txt
+swarm_follow.egg-info/dependency_links.txt
+swarm_follow.egg-info/entry_points.txt
+swarm_follow.egg-info/requires.txt
+swarm_follow.egg-info/top_level.txt
+swarm_follow.egg-info/zip-safe
+worlds/arena.wbt
