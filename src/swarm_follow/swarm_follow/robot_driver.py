@@ -1,7 +1,9 @@
 """Control each robot using only its current frontal camera observations."""
 
 import math
+
 import numpy as np
+
 from swarm_follow.vision import detect_robot
 
 WHEEL_RADIUS = 0.0205   # e-puck, m
@@ -10,7 +12,11 @@ MAX_WHEEL = 6.28        # rad/s
 # Desired PCB elevation above the horizon, in radians (not metres).
 TARGET_ANGULAR_HEIGHT = 0.14
 SIZE_GAIN = 0.06
-BEARING_GAIN = 2.0
+TURNING_GAINS = {
+    'no_following': 0.0,
+    'weak_turning': 0.5,
+    'strong_turning': 2.0,
+}
 MAX_SPEED = 0.10
 
 # Each robot starts with a different linear speed and curvature.
@@ -28,6 +34,10 @@ class RobotDriver:
 
     def init(self, webots_node, properties):
         """Enable the RGB camera and initialize wheel velocity control."""
+        self.mode = properties.get('mode', 'strong_turning')
+        if self.mode not in TURNING_GAINS:
+            raise ValueError(f'Unknown motion mode: {self.mode!r}')
+        self.bearing_gain = TURNING_GAINS[self.mode]
         self.robot = webots_node.robot
         name = self.robot.getName()
 
@@ -60,7 +70,8 @@ class RobotDriver:
 
     def step(self):
         """Follow a visible robot or immediately resume base motion."""
-        observation = self._current_detection()
+        observation = (self._current_detection()
+                       if self.mode != 'no_following' else None)
         if observation is None:
             self.v = self.base_speed
             self.w = self.base_speed * self.base_curvature
@@ -73,7 +84,7 @@ class RobotDriver:
             # A cropped target has an unreliable size: turn to recover it.
             if observation.clipped:
                 self.v = 0.0
-            self.w = BEARING_GAIN * bearing
+            self.w = self.bearing_gain * bearing
         vl = (self.v - self.w * AXLE_LENGTH / 2) / WHEEL_RADIUS
         vr = (self.v + self.w * AXLE_LENGTH / 2) / WHEEL_RADIUS
         # Scale both wheels together to preserve commanded curvature.
