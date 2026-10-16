@@ -26,7 +26,9 @@ def launch_setup(context):
         LaunchConfiguration('mode').perform(context))
     robot_description = ET.tostring(robot_description, encoding='unicode')
 
-    webots = WebotsLauncher(world=os.path.join(pkg, 'worlds', 'arena.wbt'))
+    webots = WebotsLauncher(
+        world=os.path.join(pkg, 'worlds', 'arena.wbt'),
+        mode=LaunchConfiguration('webots_mode').perform(context))
 
     robot_names = [f'robot{i}' for i in range(1, 6)]
     controllers = [
@@ -49,5 +51,9 @@ def generate_launch_description():
             'mode', default_value='strong_turning',
             choices=['no_following', 'weak_turning', 'strong_turning'],
             description='Base motion, or following with weak/strong turns.'),
+        DeclareLaunchArgument(
+            'webots_mode', default_value='realtime',
+            choices=['realtime', 'fast', 'pause'],
+            description='Webots simulation speed mode.'),
         OpaqueFunction(function=launch_setup),
     ])
