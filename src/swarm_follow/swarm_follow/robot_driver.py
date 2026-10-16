@@ -1,14 +1,15 @@
 """Control each robot using only its current frontal camera observations."""
 
 import math
+import numpy as np
+from swarm_follow.vision import detect_robot
 
 WHEEL_RADIUS = 0.0205   # e-puck, m
 AXLE_LENGTH = 0.052     # e-puck, m
 MAX_WHEEL = 6.28        # rad/s
-SENSOR_RANGE = 4.0
-HALF_FOV = math.radians(50)
-FOLLOW_DISTANCE = 0.15  # camera-to-marker horizontal distance, m
-DISTANCE_GAIN = 0.5
+# Desired PCB elevation above the horizon, in radians (not metres).
+TARGET_ANGULAR_HEIGHT = 0.14
+SIZE_GAIN = 0.06
 BEARING_GAIN = 2.0
 MAX_SPEED = 0.10
 
@@ -26,7 +27,7 @@ class RobotDriver:
     """Run one independent, memoryless follower per robot."""
 
     def init(self, webots_node, properties):
-        """Enable local recognition and initialize wheel velocity control."""
+        """Enable the RGB camera and initialize wheel velocity control."""
         self.robot = webots_node.robot
         name = self.robot.getName()
 
@@ -41,29 +42,21 @@ class RobotDriver:
             name, (0.05, 0.2))
         self.v = self.base_speed
         self.w = self.base_speed * self.base_curvature
-        self.camera = self.robot.getDevice('cam')
+        self.camera = self.robot.getDevice('camera')
         period = int(self.robot.getBasicTimeStep())
         self.camera.enable(period)
-        self.camera.recognitionEnable(period)
+        self.width = self.camera.getWidth()
+        self.height = self.camera.getHeight()
+        self.field_of_view = self.camera.getFov()
 
     def _current_detection(self):
-        """Return the nearest valid marker's distance and bearing this frame."""
-        nearest = None
-        for obj in self.camera.getRecognitionObjects():
-            if obj.getModel() != 'swarm_robot':
-                continue
-            # Webots camera coordinates: X forward, Y left, Z up.
-            forward, left, up = obj.getPosition()
-            if not all(math.isfinite(value) for value in (forward, left, up)):
-                continue
-            distance = math.hypot(forward, left)
-            bearing = math.atan2(left, forward)
-            if (forward <= 0 or distance > SENSOR_RANGE or
-                    abs(bearing) > HALF_FOV):
-                continue
-            if nearest is None or distance < nearest[0]:
-                nearest = (distance, bearing)
-        return nearest
+        """Detect a robot from this frame's BGRA pixels only."""
+        image = self.camera.getImage()
+        if image is None:
+            return None
+        pixels = np.frombuffer(image, dtype=np.uint8).reshape(
+            self.height, self.width, 4)
+        return detect_robot(pixels, self.field_of_view)
 
     def step(self):
         """Follow a visible robot or immediately resume base motion."""
@@ -72,10 +65,14 @@ class RobotDriver:
             self.v = self.base_speed
             self.w = self.base_speed * self.base_curvature
         else:
-            distance, bearing = observation
+            bearing = observation.bearing
             self.v = min(MAX_SPEED, max(
-                0.0, DISTANCE_GAIN * (distance - FOLLOW_DISTANCE)))
+                0.0, SIZE_GAIN * (
+                    TARGET_ANGULAR_HEIGHT / observation.angular_height - 1)))
             self.v *= max(0.0, math.cos(bearing))
+            # A cropped target has an unreliable size: turn to recover it.
+            if observation.clipped:
+                self.v = 0.0
             self.w = BEARING_GAIN * bearing
         vl = (self.v - self.w * AXLE_LENGTH / 2) / WHEEL_RADIUS
         vr = (self.v + self.w * AXLE_LENGTH / 2) / WHEEL_RADIUS
