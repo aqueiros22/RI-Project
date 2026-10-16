@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<robot name="metrics_supervisor">
-  <webots>
-    <plugin type="swarm_follow.collision_observer.CollisionObserver" />
-  </webots>
-</robot>
