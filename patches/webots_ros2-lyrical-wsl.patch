@@ -1,0 +1,70 @@
+diff --git a/webots_ros2_driver/CMakeLists.txt b/webots_ros2_driver/CMakeLists.txt
+index 693d9ed..ac80e15 100644
+--- a/webots_ros2_driver/CMakeLists.txt
++++ b/webots_ros2_driver/CMakeLists.txt
+@@ -10,10 +10,26 @@ if($ENV{ROS_DISTRO} MATCHES "humble")
+   add_compile_definitions(HUMBLE)
+ elseif($ENV{ROS_DISTRO} MATCHES "jazzy")
+   add_compile_definitions(JAZZY)
+-elseif($ENV{ROS_DISTRO} MATCHES "rolling")
++elseif($ENV{ROS_DISTRO} MATCHES "rolling|lyrical")
+   add_compile_definitions(ROLLING)
+ endif()
+ 
++# ament_target_dependencies was removed in ROS 2 Lyrical: minimal shim
++if(NOT COMMAND ament_target_dependencies)
++  macro(ament_target_dependencies target)
++    foreach(_dep ${ARGN})
++      if(DEFINED ${_dep}_TARGETS)
++        target_link_libraries(${target} ${${_dep}_TARGETS})
++      elseif(TARGET ${_dep}::${_dep})
++        target_link_libraries(${target} ${_dep}::${_dep})
++      else()
++        target_include_directories(${target} PUBLIC ${${_dep}_INCLUDE_DIRS})
++        target_link_libraries(${target} ${${_dep}_LIBRARIES})
++      endif()
++    endforeach()
++  endmacro()
++endif()
++
+ # ROS2 Packages
+ find_package(ament_cmake REQUIRED)
+ find_package(ament_cmake_python REQUIRED)
+@@ -38,6 +54,8 @@ elseif($ENV{ROS_DISTRO} MATCHES "jazzy")
+   find_package(Python 3.12 EXACT REQUIRED COMPONENTS Development)
+ elseif($ENV{ROS_DISTRO} MATCHES "rolling")
+   find_package(Python 3.12 EXACT REQUIRED COMPONENTS Development)
++else()
++  find_package(Python 3 REQUIRED COMPONENTS Development)
+ endif()
+ 
+ add_custom_target(compile-lib-controller ALL
+diff --git a/webots_ros2_driver/webots_ros2_driver/utils.py b/webots_ros2_driver/webots_ros2_driver/utils.py
+index db7e2b6..2ba9f03 100644
+--- a/webots_ros2_driver/webots_ros2_driver/utils.py
++++ b/webots_ros2_driver/webots_ros2_driver/utils.py
+@@ -81,10 +81,24 @@ class WebotsVersion:
+ 
+ 
+ def is_wsl():
++    # Set WEBOTS_ROS2_LINUX_WEBOTS=1 to use a Linux Webots inside WSL (WSLg) instead of the Windows one
++    if os.environ.get('WEBOTS_ROS2_LINUX_WEBOTS') == '1':
++        return False
+     return 'microsoft-standard' in uname().release
+ 
+ 
+ def get_wsl_ip_address():
++    # With WSL DNS tunneling, resolv.conf holds 10.255.255.254 instead of the Windows host:
++    # prefer WEBOTS_HOST_IP, then the default gateway (the Windows host in NAT mode)
++    if os.environ.get('WEBOTS_HOST_IP'):
++        return os.environ['WEBOTS_HOST_IP']
++    try:
++        for line in subprocess.check_output(['ip', 'route', 'show', 'default'], text=True).splitlines():
++            fields = line.split()
++            if len(fields) > 2 and fields[0] == 'default' and fields[1] == 'via':
++                return fields[2]
++    except (OSError, subprocess.CalledProcessError):
++        pass
+     try:
+         file = open('/etc/resolv.conf', 'r')
+     except IOError:
