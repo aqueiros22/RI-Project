@@ -134,11 +134,22 @@ O launch abre o Webots com `arena.wbt` e liga um controlador ROS a cada robô. D
 
 | Modo | Comportamento |
 | --- | --- |
-| `no_following` | Mantém a velocidade e a curvatura inicial de cada robô (`BASE_MOTION`), sem reagir às deteções da câmara. |
+| `no_following` | Usa o movimento inicial (`BASE_MOTION`) quando não há perigo visual; abranda e vira para longe de robôs próximos, sem os seguir. |
 | `weak_turning` | Following com PID angular: `(Kp, Ki, Kd) = (0.5, 0.02, 0.05)`. |
 | `strong_turning` | Following com PID angular: `(Kp, Ki, Kd) = (2.0, 0.05, 0.15)`. Modo por defeito. |
 
 `webots_mode` escolhe a velocidade do Webots: `realtime` (defeito), `fast` ou `pause`.
+
+No modo `no_following`, o desvio usa apenas a deteção da imagem atual: começa a
+abrandar com elevação visual de 0.045 rad e pede velocidade linear zero a 0.09 rad
+(ou se a deteção estiver cortada pela margem da imagem). Vira para o lado oposto
+ao robô observado; num encontro exatamente frontal, vira à direita. Não guarda
+alvos, direções de desvio, imagens anteriores ou temporizadores. O PID continua
+a ser a única memória do controlador nos modos de following. A aceleração dos
+motores continua limitada pelo Webots, pelo que a travagem não é instantânea.
+Estes limiares precisam de validação na simulação: a câmara frontal não cobre
+aproximações por trás e a deteção visual pode falhar, logo não há garantia de
+ausência de colisões em todas as situações.
 
 ```bash
 ros2 launch swarm_follow swarm_launch.py mode:=weak_turning webots_mode:=fast

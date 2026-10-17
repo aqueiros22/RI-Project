@@ -13,6 +13,11 @@ MAX_ACCELERATION = 0.10  # m/s² at each wheel rim; enforced by Webots motors.
 # Desired PCB elevation above the horizon, in radians (not metres).
 TARGET_ANGULAR_HEIGHT = 0.14
 SIZE_GAIN = 0.06
+# Start yielding well before the following distance to allow motor braking.
+# These are visual elevations in radians, not measured distances.
+AVOID_START_HEIGHT = 0.045
+AVOID_STOP_HEIGHT = 0.09
+AVOID_TURN_RATE = 1.5  # rad/s; turn away, never towards the visual target.
 # (Kp, Ki, Kd): initial settings to tune in Webots.
 TURNING_PID_GAINS = {
     'no_following': (0.0, 0.0, 0.0),
@@ -40,6 +45,25 @@ def following_speed(observation):
             TARGET_ANGULAR_HEIGHT / observation.angular_height - 1))
         speed *= max(0.0, math.cos(observation.bearing))
     return speed
+
+
+def no_following_motion(observation, base_speed, base_curvature):
+    """Yield to the current visual target without retaining avoidance state."""
+    if observation is None:
+        return base_speed, base_speed * base_curvature
+    urgency = max(0.0, min(1.0, (
+        observation.angular_height - AVOID_START_HEIGHT
+    ) / (AVOID_STOP_HEIGHT - AVOID_START_HEIGHT)))
+    # A cut-off target has unreliable size: brake and turn away immediately.
+    if observation.clipped:
+        urgency = 1.0
+    # Positive bearing is left. Head-on encounters always pass on the right;
+    # this tie-break is a constant, not a remembered avoidance direction.
+    direction = -1.0 if observation.bearing >= 0.0 else 1.0
+    speed = base_speed * (1.0 - urgency)
+    turn = ((1.0 - urgency) * base_speed * base_curvature
+            + urgency * direction * AVOID_TURN_RATE)
+    return speed, turn
 
 
 class RobotDriver:
@@ -97,9 +121,11 @@ class RobotDriver:
 
     def step(self):
         """Request current-frame forward motion and a PID-controlled turn."""
-        observation = (self._current_detection()
-                       if self.mode != 'no_following' else None)
-        if observation is None:
+        observation = self._current_detection()
+        if self.mode == 'no_following':
+            v, w = no_following_motion(
+                observation, self.base_speed, self.base_curvature)
+        elif observation is None:
             self.turning_pid.reset()
             v = self.base_speed
             w = self.base_speed * self.base_curvature
