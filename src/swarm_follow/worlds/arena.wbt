@@ -22,7 +22,7 @@ RectangleArena {
     type "light strip"
   }
 }
-E-puck {
+DEF ROBOT1 E-puck {
   translation 0.410598 0.749137 0
   rotation 0 0 1 1.668779938
   name "robot1"
@@ -31,7 +31,7 @@ E-puck {
   camera_width 640
   camera_height 320
 }
-E-puck {
+DEF ROBOT2 E-puck {
   translation -0.251200 -1.037618 0
   rotation 0 0 1 -0.931426913
   name "robot2"
@@ -40,7 +40,7 @@ E-puck {
   camera_width 640
   camera_height 320
 }
-E-puck {
+DEF ROBOT3 E-puck {
   translation 0.216830 -0.586869 0
   rotation 0 0 1 -1.762925863
   name "robot3"
@@ -49,7 +49,7 @@ E-puck {
   camera_width 640
   camera_height 320
 }
-E-puck {
+DEF ROBOT4 E-puck {
   translation -0.993086 0.299774 0
   rotation 0 0 1 -2.288967629
   name "robot4"
@@ -58,7 +58,7 @@ E-puck {
   camera_width 640
   camera_height 320
 }
-E-puck {
+DEF ROBOT5 E-puck {
   translation -0.253835 0.529221 0
   rotation 0 0 1 2.085541792
   name "robot5"
@@ -66,4 +66,9 @@ E-puck {
   camera_fieldOfView 1.7453292519943295
   camera_width 640
   camera_height 320
+}
+Robot {
+  name "metrics"
+  supervisor TRUE
+  controller "<extern>"
 }

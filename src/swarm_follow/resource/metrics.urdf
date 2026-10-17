@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="metrics">
+  <webots>
+    <plugin type="swarm_follow.metrics_supervisor.MetricsSupervisor">
+      <mode>strong_turning</mode>
+      <duration>0</duration>
+      <metrics_dir>metrics</metrics_dir>
+      <run_name>run</run_name>
+    </plugin>
+  </webots>
+</robot>

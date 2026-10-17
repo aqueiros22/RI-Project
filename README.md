@@ -156,6 +156,41 @@ ros2 launch swarm_follow swarm_launch.py mode:=weak_turning webots_mode:=fast
 ros2 launch swarm_follow swarm_launch.py --show-args   # lista os argumentos
 ```
 
+### Métricas
+
+Um robô extra, `metrics` (supervisor do Webots, em `arena.wbt`), regista cada execução. Lê as posições
+reais dos robôs e o tópico `/<robô>/follow_state` que cada robô publica. Nunca envia nada aos robôs, por
+isso o controlo continua puramente reativo.
+
+| Argumento | Defeito | Efeito |
+| --- | --- | --- |
+| `gui` | `true` | `false`: Webots sem janela nem renderização, em modo `fast` (testes mais rápidos). |
+| `duration` | `0` | Segundos simulados até gravar as métricas e fechar o Webots. `0` corre até `Ctrl+C`. |
+| `metrics_dir` | `metrics` | Pasta dos CSV, relativa à pasta de onde se corre o launch. |
+| `run_name` | `<modo>_<data-hora>` | Subpasta desta execução. |
+
+```bash
+# com janela, 60 s simulados
+ros2 launch swarm_follow swarm_launch.py mode:=strong_turning duration:=60
+# sem janela (mais rápido)
+ros2 launch swarm_follow swarm_launch.py mode:=weak_turning gui:=false duration:=60
+```
+
+Cada execução cria `metrics/<run_name>/` com dois ficheiros:
+
+- `timeseries.csv`: uma linha por robô e por passo, com
+  `t, robot, x, y, yaw, following, detected, bearing, angular_height, v, w`.
+- `summary.csv`: uma linha por robô e uma linha `all` para o grupo. É reescrito a cada segundo
+  simulado, por isso existe mesmo depois de um `Ctrl+C`.
+
+| Coluna do `summary.csv` | Significado |
+| --- | --- |
+| `following_time_s`, `following_pct` | Tempo a seguir um robô. No modo `no_following` é sempre 0. Na linha `all` é a média dos robôs. |
+| `mean_abs_bearing_deg` | Erro angular médio (\|ângulo até ao alvo\|) enquanto segue. |
+| `target_losses` | Passagens de "a seguir" para "sem alvo" que duram mais de 0,2 s. Falhas mais curtas são tremido da visão e não contam. |
+| `robot_collisions` | Contactos entre robôs (centros a menos de 7,5 cm), contados uma vez por contacto. Na linha `all`, cada contacto conta uma vez. |
+| `wall_collisions` | Contactos com as paredes da arena. |
+
 ### Recompilar
 
 Só é preciso depois de mudar `package.xml`, `setup.py` ou adicionar ficheiros (com `--symlink-install`,

@@ -24,3 +24,5 @@ dist/
 Thumbs.db
 
 docker.md
+# Metrics of each run (one subfolder per run)
+metrics/*/

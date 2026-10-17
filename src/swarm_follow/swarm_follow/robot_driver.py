@@ -3,6 +3,8 @@
 import math
 
 import numpy as np
+import rclpy
+from std_msgs.msg import Float64MultiArray
 
 from swarm_follow.pid import PID
 from swarm_follow.vision import detect_robot
@@ -99,6 +101,27 @@ class RobotDriver:
         self.height = self.camera.getHeight()
         self.field_of_view = self.camera.getFov()
 
+        # Report what this robot sees and commands, only for the metrics
+        # supervisor. Nothing is ever received back.
+        if not rclpy.ok():
+            rclpy.init(args=None)
+        self.node = rclpy.create_node(f'{name}_state')
+        self.state_publisher = self.node.create_publisher(
+            Float64MultiArray, f'/{name}/follow_state', 10)
+
+    def _publish_state(self, observation, v, w):
+        """Publish [following, detected, bearing, angular_height, v, w]."""
+        detected = observation is not None
+        following = detected and self.mode != 'no_following'
+        message = Float64MultiArray()
+        message.data = [
+            float(following), float(detected),
+            observation.bearing if detected else math.nan,
+            observation.angular_height if detected else math.nan,
+            float(v), float(w),
+        ]
+        self.state_publisher.publish(message)
+
     def _current_detection(self):
         """Detect a robot from this frame's BGRA pixels only."""
         image = self.camera.getImage()
@@ -141,3 +164,4 @@ class RobotDriver:
         scale = self._wheel_scale(v, w)
         self.left.setVelocity(vl / scale)
         self.right.setVelocity(vr / scale)
+        self._publish_state(observation, v / scale, w / scale)
