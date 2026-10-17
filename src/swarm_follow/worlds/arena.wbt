@@ -23,82 +23,47 @@ RectangleArena {
   }
 }
 E-puck {
-  translation -0.9 -0.7 0
+  translation 0.410598 0.749137 0
+  rotation 0 0 1 1.668779938
   name "robot1"
   controller "<extern>"
-  turretSlot [
-    Camera {
-      translation 0.03 0 0.03
-      name "cam"
-      fieldOfView 1.74533
-      width 128
-      recognition Recognition {
-        maxRange 4
-      }
-    }
-  ]
+  camera_fieldOfView 1.7453292519943295
+  camera_width 640
+  camera_height 320
 }
 E-puck {
-  translation 0.0 -0.7 0
+  translation -0.251200 -1.037618 0
+  rotation 0 0 1 -0.931426913
   name "robot2"
   controller "<extern>"
-  turretSlot [
-    Camera {
-      translation 0.03 0 0.03
-      name "cam"
-      fieldOfView 1.74533
-      width 128
-      recognition Recognition {
-        maxRange 4
-      }
-    }
-  ]
+  camera_fieldOfView 1.7453292519943295
+  camera_width 640
+  camera_height 320
 }
 E-puck {
-  translation 0.9 -0.7 0
+  translation 0.216830 -0.586869 0
+  rotation 0 0 1 -1.762925863
   name "robot3"
   controller "<extern>"
-  turretSlot [
-    Camera {
-      translation 0.03 0 0.03
-      name "cam"
-      fieldOfView 1.74533
-      width 128
-      recognition Recognition {
-        maxRange 4
-      }
-    }
-  ]
+  camera_fieldOfView 1.7453292519943295
+  camera_width 640
+  camera_height 320
 }
 E-puck {
-  translation -0.45 0.55 0
+  translation -0.993086 0.299774 0
+  rotation 0 0 1 -2.288967629
   name "robot4"
   controller "<extern>"
-  turretSlot [
-    Camera {
-      translation 0.03 0 0.03
-      name "cam"
-      fieldOfView 1.74533
-      width 128
-      recognition Recognition {
-        maxRange 4
-      }
-    }
-  ]
+  camera_fieldOfView 1.7453292519943295
+  camera_width 640
+  camera_height 320
 }
 E-puck {
-  translation 0.55 0.55 0
+  translation -0.253835 0.529221 0
+  rotation 0 0 1 2.085541792
   name "robot5"
   controller "<extern>"
-  turretSlot [
-    Camera {
-      translation 0.03 0 0.03
-      name "cam"
-      fieldOfView 1.74533
-      width 128
-      recognition Recognition {
-        maxRange 4
-      }
-    }
-  ]
+  camera_fieldOfView 1.7453292519943295
+  camera_width 640
+  camera_height 320
 }

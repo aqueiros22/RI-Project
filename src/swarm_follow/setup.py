@@ -1,6 +1,6 @@
-from setuptools import setup
-import os
 from glob import glob
+
+from setuptools import setup
 
 package_name = 'swarm_follow'
 
@@ -16,6 +16,7 @@ setup(
         ('share/' + package_name + '/resource', glob('resource/*.urdf')),
     ],
     install_requires=['setuptools'],
+    tests_require=['pytest'],
     zip_safe=True,
     entry_points={
         'console_scripts': [
