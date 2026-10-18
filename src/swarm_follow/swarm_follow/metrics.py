@@ -18,7 +18,7 @@ CONTACT_HYSTERESIS = 0.005
 MIN_LOSS_DURATION = 0.2   # s
 
 SUMMARY_FIELDS = [
-    'mode', 'robot', 'duration_s', 'following_time_s', 'following_pct',
+    'mode', 'seed', 'robot', 'duration_s', 'following_time_s', 'following_pct',
     'mean_abs_bearing_deg', 'target_losses', 'robot_collisions',
     'wall_collisions',
 ]
@@ -102,19 +102,19 @@ class MetricsTracker:
                 elif distance > ROBOT_CONTACT_DISTANCE + CONTACT_HYSTERESIS:
                     self.touching.discard(pair)
 
-    def summary_rows(self, mode):
+    def summary_rows(self, mode, seed=0):
         """Return one row per robot and an 'all' row for the swarm."""
         rows = []
         for name in self.names:
             s = self.stats[name]
             rows.append(self._row(
-                mode, name, s.following_time, s.bearing_sum,
+                mode, seed, name, s.following_time, s.bearing_sum,
                 s.bearing_samples, s.losses, s.robot_collisions,
                 s.wall_collisions))
         stats = self.stats.values()
         count = max(1, len(self.names))
         rows.append(self._row(
-            mode, 'all',
+            mode, seed, 'all',
             sum(s.following_time for s in stats) / count,
             sum(s.bearing_sum for s in stats),
             sum(s.bearing_samples for s in stats),
@@ -123,11 +123,12 @@ class MetricsTracker:
             sum(s.wall_collisions for s in stats)))
         return rows
 
-    def _row(self, mode, robot, following_time, bearing_sum, samples,
+    def _row(self, mode, seed, robot, following_time, bearing_sum, samples,
              losses, robot_collisions, wall_collisions):
         duration = self.duration
         return {
             'mode': mode,
+            'seed': seed,
             'robot': robot,
             'duration_s': round(duration, 3),
             'following_time_s': round(following_time, 3),

@@ -30,6 +30,7 @@ class MetricsSupervisor:
         """Find the robots, subscribe to their states and open the CSVs."""
         self.robot = webots_node.robot
         self.mode = properties.get('mode', '')
+        self.seed = int(properties.get('seed', '0'))
         self.duration = float(properties.get('duration', '0'))
         run_dir = os.path.join(
             properties.get('metrics_dir', 'metrics'),
@@ -112,7 +113,7 @@ class MetricsSupervisor:
         with open(self.summary_path, 'w', newline='') as file:
             writer = csv.DictWriter(file, fieldnames=SUMMARY_FIELDS)
             writer.writeheader()
-            writer.writerows(self.tracker.summary_rows(self.mode))
+            writer.writerows(self.tracker.summary_rows(self.mode, self.seed))
 
 
 def _flag(value):

@@ -2,6 +2,7 @@
 
 from datetime import datetime
 import os
+import tempfile
 import xml.etree.ElementTree as ET
 
 from ament_index_python.packages import get_package_share_directory
@@ -13,6 +14,8 @@ from launch.actions import (
 from launch.event_handlers import OnProcessExit
 from launch.events import Shutdown
 from launch.substitutions import LaunchConfiguration
+
+from swarm_follow.scenarios import random_poses, world_with_poses
 
 from webots_ros2_driver.webots_controller import WebotsController
 from webots_ros2_driver.webots_launcher import WebotsLauncher
@@ -34,33 +37,50 @@ def launch_setup(context):
     robot_description = _description(
         os.path.join(pkg, 'resource', 'robot.urdf'), {'mode': mode})
 
+    seed = int(LaunchConfiguration('seed').perform(context))
+    port = LaunchConfiguration('port').perform(context)
     run_name = LaunchConfiguration('run_name').perform(context) or (
-        f'{mode}_{datetime.now():%Y%m%d-%H%M%S}')
+        f'{mode}_seed{seed}_{datetime.now():%Y%m%d-%H%M%S}')
     metrics_description = _description(
         os.path.join(pkg, 'resource', 'metrics.urdf'), {
             'mode': mode,
+            'seed': str(seed),
             'duration': LaunchConfiguration('duration').perform(context),
             'metrics_dir': os.path.abspath(
                 LaunchConfiguration('metrics_dir').perform(context)),
             'run_name': run_name,
         })
 
+    # Seed 0 keeps arena.wbt; any other seed moves the robots to that
+    # scenario's starting poses (the same for every mode).
+    world = os.path.join(pkg, 'worlds', 'arena.wbt')
+    if seed != 0:
+        with open(world) as file:
+            text = world_with_poses(file.read(), random_poses(seed))
+        with tempfile.NamedTemporaryFile(
+                'w', suffix=f'_seed{seed}.wbt', delete=False) as file:
+            file.write(text)
+            world = file.name
+
     # Without a window there is nothing to watch, so run as fast as possible.
     webots = WebotsLauncher(
-        world=os.path.join(pkg, 'worlds', 'arena.wbt'),
+        world=world,
         mode=(LaunchConfiguration('webots_mode').perform(context)
               if gui else 'fast'),
-        gui=gui)
+        gui=gui,
+        port=port)
 
     robot_names = [f'robot{i}' for i in range(1, 6)]
     controllers = [
         WebotsController(
             robot_name=n,
+            port=port,
             parameters=[{'robot_description': robot_description}])
         for n in robot_names
     ]
     metrics = WebotsController(
         robot_name='metrics',
+        port=port,
         parameters=[{'robot_description': metrics_description}])
 
     shutdown = RegisterEventHandler(OnProcessExit(
@@ -94,6 +114,15 @@ def generate_launch_description():
                         'current directory.'),
         DeclareLaunchArgument(
             'run_name', default_value='',
-            description='Subfolder of this run; default <mode>_<date-time>.'),
+            description='Subfolder of this run; default '
+                        '<mode>_seed<seed>_<date-time>.'),
+        DeclareLaunchArgument(
+            'seed', default_value='0',
+            description='Starting poses: 0 keeps arena.wbt, any other '
+                        'number gives the same random poses every time.'),
+        DeclareLaunchArgument(
+            'port', default_value='1234',
+            description='Webots port; use a different one for each '
+                        'simulation running at the same time.'),
         OpaqueFunction(function=launch_setup),
     ])

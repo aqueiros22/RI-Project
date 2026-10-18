@@ -1,0 +1,7 @@
+mode,robot,duration_s,following_time_s,following_pct,mean_abs_bearing_deg,target_losses,robot_collisions,wall_collisions
+weak_turning,robot1,60.0,12.416,20.69,15.4,0,0,0
+weak_turning,robot2,60.0,14.784,24.64,16.18,1,0,0
+weak_turning,robot3,60.0,59.968,99.95,11.95,0,0,0
+weak_turning,robot4,60.0,55.424,92.37,15.16,0,0,0
+weak_turning,robot5,60.0,42.048,70.08,20.68,4,0,0
+weak_turning,all,60.0,36.928,61.55,15.47,5,0,0

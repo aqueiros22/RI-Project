@@ -167,13 +167,17 @@ isso o controlo continua puramente reativo.
 | `gui` | `true` | `false`: Webots sem janela nem renderização, em modo `fast` (testes mais rápidos). |
 | `duration` | `0` | Segundos simulados até gravar as métricas e fechar o Webots. `0` corre até `Ctrl+C`. |
 | `metrics_dir` | `metrics` | Pasta dos CSV, relativa à pasta de onde se corre o launch. |
-| `run_name` | `<modo>_<data-hora>` | Subpasta desta execução. |
+| `run_name` | `<modo>_seed<seed>_<data-hora>` | Subpasta desta execução. |
+| `seed` | `0` | Posições iniciais. `0` usa as de `arena.wbt`; qualquer outro número gera sempre as mesmas posições aleatórias. |
+| `port` | `1234` | Porta do Webots. Cada simulação que corre ao mesmo tempo precisa da sua. |
 
 ```bash
 # com janela, 60 s simulados
 ros2 launch swarm_follow swarm_launch.py mode:=strong_turning duration:=60
-# sem janela (mais rápido)
-ros2 launch swarm_follow swarm_launch.py mode:=weak_turning gui:=false duration:=60
+# sem janela (mais rápido), cenário 3
+ros2 launch swarm_follow swarm_launch.py mode:=weak_turning seed:=3 gui:=false duration:=60
+# os 3 modos em 5 cenários, com um só comando (ver metrics/README.md)
+python3 scripts/run_experiments.py --scenarios 5 --duration 60
 ```
 
 Cada execução cria `metrics/<run_name>/` com dois ficheiros:
