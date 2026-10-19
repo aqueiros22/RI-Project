@@ -122,14 +122,14 @@ def _collisions(row):
 
 def summary_bars(scenarios):
     """Swarm following time, angular error and collisions per scenario."""
-    fig, axes = plt.subplots(1, 3, figsize=(7.2, 2.7))
+    fig, axes = plt.subplots(1,2, figsize=(7.2, 2.7))
     # Following time and bearing do not exist without following.
     panels = [
         (lambda r: float(r['following_pct']), 'following time (%)',
          MODES[1:]),
         (lambda r: float(r['mean_abs_bearing_deg'] or 0),
          'mean |bearing| (deg)', MODES[1:]),
-        (_collisions, 'collisions (robot + wall)', MODES),
+      #  (_collisions, 'collisions (robot + wall)', MODES),
     ]
     for ax, (value, label, modes) in zip(axes, panels):
         width = 0.8 / len(modes)
@@ -142,7 +142,7 @@ def summary_bars(scenarios):
         ax.set_xticklabels(scenarios, fontsize=7, rotation=40, ha='right')
         ax.set_ylabel(label, fontsize=8)
         ax.tick_params(labelsize=7)
-    handles, labels = axes[2].get_legend_handles_labels()
+    handles, labels = axes[1].get_legend_handles_labels()
     fig.legend(handles, labels, loc='upper center', ncol=3, fontsize=7,
                frameon=False)
     fig.tight_layout(rect=(0, 0, 1, 0.9))
