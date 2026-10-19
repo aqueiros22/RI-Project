@@ -1,0 +1,74 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Parquetry.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.47109128237688164 -0.1609912449003398 -0.8672685989553317 3.7620876466237325
+  position 2.058972285210765 -2.1175203814195145 4.149569923315268
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 3 3
+  floorAppearance Parquetry {
+    type "light strip"
+  }
+}
+DEF ROBOT1 E-puck {
+  translation -0.519296 -0.527177 0
+  rotation 0 0 -1 1.01909
+  name "robot1"
+  controller "<extern>"
+  camera_fieldOfView 1.7453292519943295
+  camera_width 640
+  camera_height 320
+}
+DEF ROBOT2 E-puck {
+  translation -1.11666 0.903147 0
+  rotation 0 0 1 -1.5357353071795865
+  name "robot2"
+  controller "<extern>"
+  camera_fieldOfView 1.7453292519943295
+  camera_width 640
+  camera_height 320
+}
+DEF ROBOT3 E-puck {
+  translation 0.253784 -0.030875 0
+  rotation 0 0 1 3.08383
+  name "robot3"
+  controller "<extern>"
+  camera_fieldOfView 1.7453292519943295
+  camera_width 640
+  camera_height 320
+}
+DEF ROBOT4 E-puck {
+  translation 0.176124 0.661985 0
+  rotation 0 0 1 -1.780688341
+  name "robot4"
+  controller "<extern>"
+  camera_fieldOfView 1.7453292519943295
+  camera_width 640
+  camera_height 320
+}
+DEF ROBOT5 E-puck {
+  translation -0.696808 0.396093 0
+  rotation 0 0 1 -2.437759858
+  name "robot5"
+  controller "<extern>"
+  camera_fieldOfView 1.7453292519943295
+  camera_width 640
+  camera_height 320
+}
+Robot {
+  name "metrics"
+  controller "<extern>"
+  supervisor TRUE
+}

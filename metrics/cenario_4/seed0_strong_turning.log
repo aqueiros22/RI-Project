@@ -1,0 +1,73 @@
+[INFO] [launch]: All log files can be found below /home/aqueiros_22/.ros/log/2026-10-19-11-15-13-937992-aqueirospc-72122
+[INFO] [launch]: Default logging verbosity is set to INFO
+WARNING: No valid Webots directory specified in `ROS2_WEBOTS_HOME` and `WEBOTS_HOME`, fallback to default installation folder /usr/local/webots.
+[INFO] [webots-1]: process started with pid [72126]
+[INFO] [webots_controller_robot1-2]: process started with pid [72127]
+[INFO] [webots_controller_robot2-3]: process started with pid [72128]
+[INFO] [webots_controller_robot3-4]: process started with pid [72129]
+[INFO] [webots_controller_robot4-5]: process started with pid [72131]
+[INFO] [webots_controller_robot5-6]: process started with pid [72133]
+[INFO] [webots_controller_metrics-7]: process started with pid [72134]
+[webots_controller_robot1-2] The specified robot (at /tmp/webots/aqueiros_22/1234/ipc/robot1/extern) is not in the list of robots with <extern> controllers, retrying for another 50 seconds...
+[webots_controller_robot4-5] The specified robot (at /tmp/webots/aqueiros_22/1234/ipc/robot4/extern) is not in the list of robots with <extern> controllers, retrying for another 50 seconds...
+[webots_controller_robot5-6] The specified robot (at /tmp/webots/aqueiros_22/1234/ipc/robot5/extern) is not in the list of robots with <extern> controllers, retrying for another 50 seconds...
+[webots_controller_robot3-4] The specified robot (at /tmp/webots/aqueiros_22/1234/ipc/robot3/extern) is not in the list of robots with <extern> controllers, retrying for another 50 seconds...
+[webots_controller_robot2-3] The specified robot (at /tmp/webots/aqueiros_22/1234/ipc/robot2/extern) is not in the list of robots with <extern> controllers, retrying for another 50 seconds...
+[webots_controller_metrics-7] The specified robot (at /tmp/webots/aqueiros_22/1234/ipc/metrics/extern) is not in the list of robots with <extern> controllers, retrying for another 50 seconds...
+[webots-1] INFO: 'robot1' extern controller: Waiting for local or remote connection on port 1234 targeting robot named 'robot1'.
+[webots-1] INFO: 'robot2' extern controller: Waiting for local or remote connection on port 1234 targeting robot named 'robot2'.
+[webots-1] INFO: 'robot3' extern controller: Waiting for local or remote connection on port 1234 targeting robot named 'robot3'.
+[webots-1] INFO: 'robot4' extern controller: Waiting for local or remote connection on port 1234 targeting robot named 'robot4'.
+[webots-1] INFO: 'robot5' extern controller: Waiting for local or remote connection on port 1234 targeting robot named 'robot5'.
+[webots-1] INFO: 'metrics' extern controller: Waiting for local or remote connection on port 1234 targeting robot named 'metrics'.
+[webots-1] INFO: 'robot1' extern controller: connected.
+[webots-1] INFO: 'robot4' extern controller: connected.
+[webots-1] INFO: 'robot5' extern controller: connected.
+[webots-1] INFO: 'robot3' extern controller: connected.
+[webots_controller_robot1-2] [WARN] [1792404916.270308621] [robot1]: [33mPassing robot description as a string is deprecated. Provide the URDF or Xacro file path instead.[0m
+[webots_controller_robot4-5] [WARN] [1792404916.272884488] [robot4]: [33mPassing robot description as a string is deprecated. Provide the URDF or Xacro file path instead.[0m
+[webots_controller_robot3-4] [WARN] [1792404916.279866081] [robot3]: [33mPassing robot description as a string is deprecated. Provide the URDF or Xacro file path instead.[0m
+[webots_controller_robot5-6] [WARN] [1792404916.283627874] [robot5]: [33mPassing robot description as a string is deprecated. Provide the URDF or Xacro file path instead.[0m
+[webots-1] INFO: 'robot2' extern controller: connected.
+[webots-1] INFO: 'metrics' extern controller: connected.
+[webots_controller_robot2-3] [WARN] [1792404916.309030608] [robot2]: [33mPassing robot description as a string is deprecated. Provide the URDF or Xacro file path instead.[0m
+[webots_controller_metrics-7] [WARN] [1792404916.327848813] [metrics]: [33mPassing robot description as a string is deprecated. Provide the URDF or Xacro file path instead.[0m
+[webots_controller_metrics-7] [INFO] [1792404916.864405312] [metrics_supervisor]: Writing metrics to /home/aqueiros_22/ros2_ws/metrics/cenario_4/seed0_strong_turning
+[webots_controller_metrics-7] [INFO] [1792404916.864509766] [metrics]: Controller successfully connected to robot in Webots simulation.
+[webots_controller_robot5-6] [INFO] [1792404917.047016055] [robot5]: Controller successfully connected to robot in Webots simulation.
+[webots_controller_robot4-5] [INFO] [1792404917.057617207] [robot4]: Controller successfully connected to robot in Webots simulation.
+[webots_controller_robot1-2] [INFO] [1792404917.070304412] [robot1]: Controller successfully connected to robot in Webots simulation.
+[webots_controller_robot2-3] [INFO] [1792404917.147788819] [robot2]: Controller successfully connected to robot in Webots simulation.
+[webots_controller_robot3-4] [INFO] [1792404917.282779369] [robot3]: Controller successfully connected to robot in Webots simulation.
+[webots_controller_metrics-7] [INFO] [1792404947.979517585] [metrics_supervisor]: Metrics saved, closing Webots.
+[webots-1] INFO: <extern>: Terminating.
+[webots-1] INFO: <extern>: Terminating.
+[webots-1] INFO: <extern>: Terminating.
+[webots-1] INFO: <extern>: Terminating.
+[webots-1] INFO: <extern>: Terminating.
+[webots-1] INFO: <extern>: Terminating.
+[webots-1] INFO: 'robot1' extern controller: disconnected.
+[webots-1] INFO: 'robot4' extern controller: disconnected.
+[webots-1] INFO: 'robot5' extern controller: disconnected.
+[webots-1] INFO: 'robot3' extern controller: disconnected.
+[webots-1] INFO: 'robot2' extern controller: disconnected.
+[webots-1] INFO: 'metrics' extern controller: disconnected.
+[webots_controller_robot2-3] [INFO] [1792404948.055207618] [robot2]: Controller successfully disconnected from robot in Webots simulation.
+[webots_controller_robot5-6] [INFO] [1792404948.055244757] [robot5]: Controller successfully disconnected from robot in Webots simulation.
+[webots_controller_robot1-2] [INFO] [1792404948.057410942] [robot1]: Controller successfully disconnected from robot in Webots simulation.
+[webots_controller_metrics-7] [INFO] [1792404948.057586050] [metrics]: Controller successfully disconnected from robot in Webots simulation.
+[webots_controller_robot4-5] [INFO] [1792404948.060244563] [robot4]: Controller successfully disconnected from robot in Webots simulation.
+[webots_controller_robot3-4] [INFO] [1792404948.060293627] [robot3]: Controller successfully disconnected from robot in Webots simulation.
+[INFO] [webots-1]: process has finished cleanly [pid 72126]
+[INFO] [webots_controller_metrics-7]: sending signal 'SIGINT' to process[webots_controller_metrics-7]
+[INFO] [webots_controller_robot5-6]: sending signal 'SIGINT' to process[webots_controller_robot5-6]
+[INFO] [webots_controller_robot4-5]: sending signal 'SIGINT' to process[webots_controller_robot4-5]
+[INFO] [webots_controller_robot3-4]: sending signal 'SIGINT' to process[webots_controller_robot3-4]
+[INFO] [webots_controller_robot2-3]: sending signal 'SIGINT' to process[webots_controller_robot2-3]
+[INFO] [webots_controller_robot1-2]: sending signal 'SIGINT' to process[webots_controller_robot1-2]
+[INFO] [webots_controller_metrics-7]: process has finished cleanly [pid 72134]
+[INFO] [webots_controller_robot5-6]: process has finished cleanly [pid 72133]
+[INFO] [webots_controller_robot1-2]: process has finished cleanly [pid 72127]
+[INFO] [webots_controller_robot3-4]: process has finished cleanly [pid 72129]
+[INFO] [webots_controller_robot4-5]: process has finished cleanly [pid 72131]
+[INFO] [webots_controller_robot2-3]: process has finished cleanly [pid 72128]
