@@ -1,0 +1,17 @@
+[1.081s] Invoking command in '/home/aqueiros_22/ros2_ws/build/swarm_follow': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/aqueiros_22/ros2_ws/build/swarm_follow/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/aqueiros_22/ros2_ws/build/swarm_follow/build --no-deps symlink_data
+[1.373s] running develop
+[1.547s] running egg_info
+[1.562s] writing swarm_follow.egg-info/PKG-INFO
+[1.563s] writing dependency_links to swarm_follow.egg-info/dependency_links.txt
+[1.563s] writing entry points to swarm_follow.egg-info/entry_points.txt
+[1.563s] writing requirements to swarm_follow.egg-info/requires.txt
+[1.563s] writing top-level names to swarm_follow.egg-info/top_level.txt
+[1.595s] reading manifest file 'swarm_follow.egg-info/SOURCES.txt'
+[1.595s] writing manifest file 'swarm_follow.egg-info/SOURCES.txt'
+[1.617s] running build_ext
+[1.617s] Creating /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm-follow.egg-link (link to .)
+[1.618s] Installing follower script to /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/swarm_follow
+[1.618s] 
+[1.618s] Installed /home/aqueiros_22/ros2_ws/build/swarm_follow
+[1.618s] running symlink_data
+[1.655s] Invoked command in '/home/aqueiros_22/ros2_ws/build/swarm_follow' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/aqueiros_22/ros2_ws/build/swarm_follow/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/aqueiros_22/ros2_ws/build/swarm_follow/build --no-deps symlink_data

@@ -1,7 +1,0 @@
-mode,seed,robot,duration_s,following_time_s,following_pct,mean_abs_bearing_deg,target_losses,robot_collisions,wall_collisions
-no_following,2,robot1,60.0,0.0,0.0,,0,0,0
-no_following,2,robot2,60.0,0.0,0.0,,0,0,1
-no_following,2,robot3,60.0,0.0,0.0,,0,0,0
-no_following,2,robot4,60.0,0.0,0.0,,0,0,0
-no_following,2,robot5,60.0,0.0,0.0,,0,0,0
-no_following,2,all,60.0,0.0,0.0,,0,0,1

@@ -1,0 +1,161 @@
+[0.000000] (-) TimerEvent: {}
+[0.000190] (swarm_follow) JobQueued: {'identifier': 'swarm_follow', 'dependencies': OrderedDict({'swarm_follow': '/home/aqueiros_22/ros2_ws/install/swarm_follow'})}
+[0.000579] (swarm_follow) JobStarted: {'identifier': 'swarm_follow'}
+[0.099850] (-) TimerEvent: {}
+[0.200068] (-) TimerEvent: {}
+[0.204240] (swarm_follow) Command: {'cmd': ['/usr/bin/python3', '-m', 'pytest'], 'cwd': '/home/aqueiros_22/ros2_ws/src/swarm_follow', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/aqueiros_22', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'CODEX_CI': '1', 'USER': 'aqueiros_22', 'CODEX_INTERNAL_ORIGINATOR_OVERRIDE': 'codex_vscode', 'VSCODE_NLS_CONFIG': '{"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","locale":"en-us","availableLanguages":{}}', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/share/gz', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'x11', 'DEBUG': 'release', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/aqueiros_22', 'CHROME_DESKTOP': 'com.microsoft.VSCode.desktop', 'DESKTOP_SESSION': 'ubuntu', 'NVM_BIN': '/home/aqueiros_22/.nvm/versions/node/v22.21.0/bin', 'NVM_INC': '/home/aqueiros_22/.nvm/versions/node/v22.21.0/include/node', 'VSCODE_IPC_HOOK': '/run/user/1000/vscode-226da3e2-1.14-main.sock', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/com.microsoft.VSCode.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'MANAGERPID': '4604', 'LC_CTYPE': 'C.UTF-8', 'SYSTEMD_EXEC_PID': '5036', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': '', 'LIBVIRT_DEFAULT_URI': 'qemu:///system', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '14177', 'NVM_DIR': '/home/aqueiros_22/.nvm', 'VSCODE_CRASH_REPORTER_PROCESS_TYPE': 'extensionHost', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/aqueiros_22/ros2_ws/install', 'CODEX_PERMISSION_PROFILE': ':workspace', 'ROS_DISTRO': 'jazzy', 'PYTHONDONTWRITEBYTECODE': '1', 'LOGNAME': 'aqueiros_22', 'JOURNAL_STREAM': '8:39080', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'CODEX_APPLY_PATCH_PRESERVE_LINE_ENDINGS': '1', 'RUST_LOG': 'warn', 'USERNAME': 'aqueiros_22', 'TERM': 'dumb', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'PATH': '/home/aqueiros_22/.local/bin:/home/aqueiros_22/.codex/tmp/arg0/codex-arg0Eq5tKw:/home/aqueiros_22/.local/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/bin:/home/aqueiros_22/.nvm/versions/node/v22.21.0/bin:/home/aqueiros_22/.local/bin:/home/aqueiros_22/.cabal/bin:/home/aqueiros_22/.ghcup/bin:/home/aqueiros_22/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/aqueiros_22/.vscode/extensions/openai.chatgpt-26.1007.21434-linux-x64/bin/linux-x86_64', 'SESSION_MANAGER': 'local/aqueirospc:@/tmp/.ICE-unix/5005,unix/aqueirospc:/tmp/.ICE-unix/5005', 'CODEX_VERSION': '0.162.0-alpha.17.2', 'CODEX_SESSION_ID': '01a1452b-f6a8-7b50-9e42-76b4898984e6', 'INVOCATION_ID': '2fb1b39fb55243ad94de21cf98544be0', 'VSCODE_NODE_COMPILE_CACHE_ROOT': '/usr/share/code/resources/app/node-compile-cache', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'CODEX_SANDBOX_NETWORK_DISABLED': '1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'GH_PAGER': 'cat', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/aqueiros_22/ros2_ws/install/swarm_follow:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'ELECTRON_RUN_AS_NODE': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CODEX_THREAD_ID': '01a1452b-f6a8-7b50-9e42-76b4898984e6', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/aqueiros_22/ros2_ws/build/swarm_follow', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'VSCODE_CODE_CACHE_PATH': '/home/aqueiros_22/.config/Code/CachedData/2a59476c9bfcb90b3ddc372c36762471b7dfad1c', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/aqueiros_22/ros2_ws/build/swarm_follow:/home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages:/opt/ros/jazzy/opt/sdformat_vendor/lib/python:/opt/ros/jazzy/opt/gz_math_vendor/lib/python:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'VSCODE_PID': '14177', 'PYTEST_ADDOPTS': '--tb=short --junit-xml=/home/aqueiros_22/ros2_ws/build/swarm_follow/pytest.xml --junit-prefix=swarm_follow -o cache_dir=/home/aqueiros_22/ros2_ws/build/swarm_follow/.pytest_cache'}), 'shell': False}
+[0.300181] (-) TimerEvent: {}
+[0.400352] (-) TimerEvent: {}
+[0.500555] (-) TimerEvent: {}
+[0.600764] (-) TimerEvent: {}
+[0.701056] (-) TimerEvent: {}
+[0.801292] (-) TimerEvent: {}
+[0.901511] (-) TimerEvent: {}
+[0.906776] (swarm_follow) StdoutLine: {'line': b'============================= test session starts ==============================\n'}
+[0.907046] (swarm_follow) StdoutLine: {'line': b'platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0\n'}
+[0.907320] (swarm_follow) StdoutLine: {'line': b'cachedir: /home/aqueiros_22/ros2_ws/build/swarm_follow/.pytest_cache\n'}
+[0.907464] (swarm_follow) StdoutLine: {'line': b'rootdir: /home/aqueiros_22/ros2_ws/src/swarm_follow\n'}
+[0.907586] (swarm_follow) StdoutLine: {'line': b'plugins: ament-pep257-0.17.5, ament-copyright-0.17.5, ament-xmllint-0.17.5, ament-lint-0.17.5, launch-testing-3.4.12, launch-testing-ros-0.26.13, ament-flake8-0.17.5, typeguard-4.1.5, colcon-core-0.21.3, cov-4.1.0\n'}
+[0.907715] (swarm_follow) StdoutLine: {'line': b'collected 17 items\n'}
+[0.907843] (swarm_follow) StdoutLine: {'line': b'\n'}
+[0.912506] (swarm_follow) StdoutLine: {'line': b'test/test_copyright.py s                                                 [  5%]\n'}
+[1.001610] (-) TimerEvent: {}
+[1.101786] (-) TimerEvent: {}
+[1.151684] (swarm_follow) StdoutLine: {'line': b'test/test_flake8.py F                                                    [ 11%]\n'}
+[1.191993] (swarm_follow) StdoutLine: {'line': b'test/test_pep257.py F                                                    [ 17%]\n'}
+[1.201883] (-) TimerEvent: {}
+[1.302100] (-) TimerEvent: {}
+[1.402357] (-) TimerEvent: {}
+[1.466188] (swarm_follow) StdoutLine: {'line': b'test/test_vision.py ..............                                       [100%]\n'}
+[1.466357] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.466412] (swarm_follow) StdoutLine: {'line': b'=================================== FAILURES ===================================\n'}
+[1.466458] (swarm_follow) StdoutLine: {'line': b'_________________________________ test_flake8 __________________________________\n'}
+[1.466504] (swarm_follow) StdoutLine: {'line': b'test/test_flake8.py:23: in test_flake8\n'}
+[1.466548] (swarm_follow) StdoutLine: {'line': b'    assert rc == 0, \\\n'}
+[1.466590] (swarm_follow) StdoutLine: {'line': b'E   AssertionError: Found 13 code style errors / warnings:\n'}
+[1.466657] (swarm_follow) StdoutLine: {'line': b"E     ./launch/swarm_launch.py:2:1: I201 Missing newline between import groups. 'from launch import LaunchDescription' is identified as Third Party and 'import os' is identified as Stdlib.\n"}
+[1.466721] (swarm_follow) StdoutLine: {'line': b'E     ./launch/swarm_launch.py:3:1: I101 Imported names are in the wrong order. Should be EmitEvent, RegisterEventHandler\n'}
+[1.466768] (swarm_follow) StdoutLine: {'line': b"E     ./launch/swarm_launch.py:6:1: I100 Import statements are in the wrong order. 'from ament_index_python.packages import get_package_share_directory' should be before 'from launch.events import Shutdown'\n"}
+[1.466814] (swarm_follow) StdoutLine: {'line': b"E     ./launch/swarm_launch.py:8:1: I100 Import statements are in the wrong order. 'from webots_ros2_driver.webots_controller import WebotsController' should be before 'from webots_ros2_driver.webots_launcher import WebotsLauncher'\n"}
+[1.466857] (swarm_follow) StdoutLine: {'line': b'E     ./launch/swarm_launch.py:26:63: W292 no newline at end of file\n'}
+[1.466899] (swarm_follow) StdoutLine: {'line': b"E     ./setup.py:2:1: I100 Import statements are in the wrong order. 'import os' should be before 'from setuptools import setup' and in a different group.\n"}
+[1.466942] (swarm_follow) StdoutLine: {'line': b"E     ./setup.py:2:1: I201 Missing newline between import groups. 'import os' is identified as Stdlib and 'from setuptools import setup' is identified as Third Party.\n"}
+[1.466984] (swarm_follow) StdoutLine: {'line': b"E     ./setup.py:2:1: F401 'os' imported but unused\n"}
+[1.467040] (swarm_follow) StdoutLine: {'line': b"E     ./setup.py:3:1: I100 Import statements are in the wrong order. 'from glob import glob' should be before 'import os'\n"}
+[1.467103] (swarm_follow) StdoutLine: {'line': b"E     ./swarm_follow/follower_controller.py:2:5: F821 undefined name 'rclpy'\n"}
+[1.467176] (swarm_follow) StdoutLine: {'line': b"E     ./swarm_follow/follower_controller.py:3:12: F821 undefined name 'SwarmFollower'\n"}
+[1.467242] (swarm_follow) StdoutLine: {'line': b"E     ./swarm_follow/follower_controller.py:4:5: F821 undefined name 'rclpy'\n"}
+[1.467292] (swarm_follow) StdoutLine: {'line': b"E     ./swarm_follow/follower_controller.py:6:5: F821 undefined name 'rclpy'\n"}
+[1.467333] (swarm_follow) StdoutLine: {'line': b'E   assert 1 == 0\n'}
+[1.467379] (swarm_follow) StdoutLine: {'line': b'----------------------------- Captured stdout call -----------------------------\n'}
+[1.467425] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.467491] (swarm_follow) StdoutLine: {'line': b"./launch/swarm_launch.py:2:1: I201 Missing newline between import groups. 'from launch import LaunchDescription' is identified as Third Party and 'import os' is identified as Stdlib.\n"}
+[1.467558] (swarm_follow) StdoutLine: {'line': b'from launch import LaunchDescription\n'}
+[1.467622] (swarm_follow) StdoutLine: {'line': b'^\n'}
+[1.467683] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.467726] (swarm_follow) StdoutLine: {'line': b'./launch/swarm_launch.py:3:1: I101 Imported names are in the wrong order. Should be EmitEvent, RegisterEventHandler\n'}
+[1.467769] (swarm_follow) StdoutLine: {'line': b'from launch.actions import RegisterEventHandler, EmitEvent\n'}
+[1.467811] (swarm_follow) StdoutLine: {'line': b'^\n'}
+[1.467852] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.467898] (swarm_follow) StdoutLine: {'line': b"./launch/swarm_launch.py:6:1: I100 Import statements are in the wrong order. 'from ament_index_python.packages import get_package_share_directory' should be before 'from launch.events import Shutdown'\n"}
+[1.467951] (swarm_follow) StdoutLine: {'line': b'from ament_index_python.packages import get_package_share_directory\n'}
+[1.467995] (swarm_follow) StdoutLine: {'line': b'^\n'}
+[1.468035] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.468076] (swarm_follow) StdoutLine: {'line': b"./launch/swarm_launch.py:8:1: I100 Import statements are in the wrong order. 'from webots_ros2_driver.webots_controller import WebotsController' should be before 'from webots_ros2_driver.webots_launcher import WebotsLauncher'\n"}
+[1.468129] (swarm_follow) StdoutLine: {'line': b'from webots_ros2_driver.webots_controller import WebotsController\n'}
+[1.468182] (swarm_follow) StdoutLine: {'line': b'^\n'}
+[1.468223] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.468264] (swarm_follow) StdoutLine: {'line': b'./launch/swarm_launch.py:26:63: W292 no newline at end of file\n'}
+[1.468317] (swarm_follow) StdoutLine: {'line': b'    return LaunchDescription([webots, *controllers, shutdown])                                                              ^\n'}
+[1.468359] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.468400] (swarm_follow) StdoutLine: {'line': b"./setup.py:2:1: I100 Import statements are in the wrong order. 'import os' should be before 'from setuptools import setup' and in a different group.\n"}
+[1.468446] (swarm_follow) StdoutLine: {'line': b'import os\n'}
+[1.468488] (swarm_follow) StdoutLine: {'line': b'^\n'}
+[1.468532] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.468574] (swarm_follow) StdoutLine: {'line': b"./setup.py:2:1: I201 Missing newline between import groups. 'import os' is identified as Stdlib and 'from setuptools import setup' is identified as Third Party.\n"}
+[1.468618] (swarm_follow) StdoutLine: {'line': b'import os\n'}
+[1.468660] (swarm_follow) StdoutLine: {'line': b'^\n'}
+[1.468702] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.468742] (swarm_follow) StdoutLine: {'line': b"./setup.py:2:1: F401 'os' imported but unused\n"}
+[1.468782] (swarm_follow) StdoutLine: {'line': b'import os\n'}
+[1.468823] (swarm_follow) StdoutLine: {'line': b'^\n'}
+[1.468863] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.468903] (swarm_follow) StdoutLine: {'line': b"./setup.py:3:1: I100 Import statements are in the wrong order. 'from glob import glob' should be before 'import os'\n"}
+[1.468945] (swarm_follow) StdoutLine: {'line': b'from glob import glob\n'}
+[1.468987] (swarm_follow) StdoutLine: {'line': b'^\n'}
+[1.469239] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.469320] (swarm_follow) StdoutLine: {'line': b"./swarm_follow/follower_controller.py:2:5: F821 undefined name 'rclpy'\n"}
+[1.469364] (swarm_follow) StdoutLine: {'line': b'    rclpy.init(args=args)\n'}
+[1.469408] (swarm_follow) StdoutLine: {'line': b'    ^\n'}
+[1.469451] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.469500] (swarm_follow) StdoutLine: {'line': b"./swarm_follow/follower_controller.py:3:12: F821 undefined name 'SwarmFollower'\n"}
+[1.469542] (swarm_follow) StdoutLine: {'line': b'    node = SwarmFollower()\n'}
+[1.469585] (swarm_follow) StdoutLine: {'line': b'           ^\n'}
+[1.469629] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.469671] (swarm_follow) StdoutLine: {'line': b"./swarm_follow/follower_controller.py:4:5: F821 undefined name 'rclpy'\n"}
+[1.469716] (swarm_follow) StdoutLine: {'line': b'    rclpy.spin(node)\n'}
+[1.469776] (swarm_follow) StdoutLine: {'line': b'    ^\n'}
+[1.469844] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.469917] (swarm_follow) StdoutLine: {'line': b"./swarm_follow/follower_controller.py:6:5: F821 undefined name 'rclpy'\n"}
+[1.469979] (swarm_follow) StdoutLine: {'line': b'    rclpy.shutdown()\n'}
+[1.470043] (swarm_follow) StdoutLine: {'line': b'    ^\n'}
+[1.470087] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.470141] (swarm_follow) StdoutLine: {'line': b"1     F401 'os' imported but unused\n"}
+[1.470211] (swarm_follow) StdoutLine: {'line': b"4     F821 undefined name 'rclpy'\n"}
+[1.470256] (swarm_follow) StdoutLine: {'line': b"4     I100 Import statements are in the wrong order. 'from ament_index_python.packages import get_package_share_directory' should be before 'from launch.events import Shutdown'\n"}
+[1.470298] (swarm_follow) StdoutLine: {'line': b'1     I101 Imported names are in the wrong order. Should be EmitEvent, RegisterEventHandler\n'}
+[1.470345] (swarm_follow) StdoutLine: {'line': b"2     I201 Missing newline between import groups. 'from launch import LaunchDescription' is identified as Third Party and 'import os' is identified as Stdlib.\n"}
+[1.470427] (swarm_follow) StdoutLine: {'line': b'1     W292 no newline at end of file\n'}
+[1.470496] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.470564] (swarm_follow) StdoutLine: {'line': b'10 files checked\n'}
+[1.470628] (swarm_follow) StdoutLine: {'line': b'13 errors\n'}
+[1.470676] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.470728] (swarm_follow) StdoutLine: {'line': b"'F'-type errors: 5\n"}
+[1.470786] (swarm_follow) StdoutLine: {'line': b"'I'-type errors: 7\n"}
+[1.470838] (swarm_follow) StdoutLine: {'line': b"'W'-type errors: 1\n"}
+[1.470891] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.470956] (swarm_follow) StdoutLine: {'line': b'Checked files:\n'}
+[1.471008] (swarm_follow) StdoutLine: {'line': b'\n'}
+[1.471058] (swarm_follow) StdoutLine: {'line': b'* ./setup.py\n'}
+[1.471101] (swarm_follow) StdoutLine: {'line': b'* ./test/test_vision.py\n'}
+[1.471172] (swarm_follow) StdoutLine: {'line': b'* ./test/test_pep257.py\n'}
+[1.471229] (swarm_follow) StdoutLine: {'line': b'* ./test/test_copyright.py\n'}
+[1.471279] (swarm_follow) StdoutLine: {'line': b'* ./test/test_flake8.py\n'}
+[1.471329] (swarm_follow) StdoutLine: {'line': b'* ./swarm_follow/robot_driver.py\n'}
+[1.471377] (swarm_follow) StdoutLine: {'line': b'* ./swarm_follow/__init__.py\n'}
+[1.471428] (swarm_follow) StdoutLine: {'line': b'* ./swarm_follow/follower_controller.py\n'}
+[1.471490] (swarm_follow) StdoutLine: {'line': b'* ./swarm_follow/vision.py\n'}
+[1.471556] (swarm_follow) StdoutLine: {'line': b'* ./launch/swarm_launch.py\n'}
+[1.471610] (swarm_follow) StdoutLine: {'line': b'_________________________________ test_pep257 __________________________________\n'}
+[1.471667] (swarm_follow) StdoutLine: {'line': b'test/test_pep257.py:23: in test_pep257\n'}
+[1.471715] (swarm_follow) StdoutLine: {'line': b"    assert rc == 0, 'Found code style errors / warnings'\n"}
+[1.471774] (swarm_follow) StdoutLine: {'line': b'E   AssertionError: Found code style errors / warnings\n'}
+[1.471828] (swarm_follow) StdoutLine: {'line': b'E   assert 1 == 0\n'}
+[1.471889] (swarm_follow) StdoutLine: {'line': b'----------------------------- Captured stdout call -----------------------------\n'}
+[1.471943] (swarm_follow) StdoutLine: {'line': b'checking ./launch/swarm_launch.py\n'}
+[1.471998] (swarm_follow) StdoutLine: {'line': b'checking ./setup.py\n'}
+[1.472052] (swarm_follow) StdoutLine: {'line': b'checking ./swarm_follow/__init__.py\n'}
+[1.472102] (swarm_follow) StdoutLine: {'line': b'checking ./swarm_follow/follower_controller.py\n'}
+[1.472166] (swarm_follow) StdoutLine: {'line': b'checking ./swarm_follow/robot_driver.py\n'}
+[1.472210] (swarm_follow) StdoutLine: {'line': b'checking ./swarm_follow/vision.py\n'}
+[1.472261] (swarm_follow) StdoutLine: {'line': b'checking ./test/test_copyright.py\n'}
+[1.472313] (swarm_follow) StdoutLine: {'line': b'checking ./test/test_flake8.py\n'}
+[1.472376] (swarm_follow) StdoutLine: {'line': b'checking ./test/test_pep257.py\n'}
+[1.472429] (swarm_follow) StdoutLine: {'line': b'checking ./test/test_vision.py\n'}
+[1.472491] (swarm_follow) StdoutLine: {'line': b'checking test/test_copyright.py\n'}
+[1.472537] (swarm_follow) StdoutLine: {'line': b'checking test/test_flake8.py\n'}
+[1.472588] (swarm_follow) StdoutLine: {'line': b'checking test/test_pep257.py\n'}
+[1.472631] (swarm_follow) StdoutLine: {'line': b'checking test/test_vision.py\n'}
+[1.472682] (swarm_follow) StdoutLine: {'line': b'----------------------------- Captured stderr call -----------------------------\n'}
+[1.472747] (swarm_follow) StdoutLine: {'line': b'./swarm_follow/vision.py:20 in public function `detect_robot`: D213: Multi-line docstring summary should start at the second line\n'}
+[1.472811] (swarm_follow) StdoutLine: {'line': b'1 errors\n'}
+[1.472873] (swarm_follow) StdoutLine: {'line': b'- generated xml file: /home/aqueiros_22/ros2_ws/build/swarm_follow/pytest.xml --\n'}
+[1.472929] (swarm_follow) StdoutLine: {'line': b'=========================== short test summary info ============================\n'}
+[1.472970] (swarm_follow) StdoutLine: {'line': b'FAILED test/test_flake8.py::test_flake8 - AssertionError: Found 13 code style...\n'}
+[1.473016] (swarm_follow) StdoutLine: {'line': b'FAILED test/test_pep257.py::test_pep257 - AssertionError: Found code style er...\n'}
+[1.473057] (swarm_follow) StdoutLine: {'line': b'=================== 2 failed, 14 passed, 1 skipped in 0.89s ====================\n'}
+[1.502443] (-) TimerEvent: {}
+[1.557437] (swarm_follow) CommandEnded: {'returncode': 1}
+[1.557911] (swarm_follow) TestFailure: {'identifier': 'swarm_follow'}
+[1.557946] (swarm_follow) JobEnded: {'identifier': 'swarm_follow', 'rc': 0}
+[1.558475] (-) EventReactorShutdown: {}

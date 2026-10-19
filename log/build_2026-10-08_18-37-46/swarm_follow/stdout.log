@@ -1,0 +1,28 @@
+running develop
+running egg_info
+creating swarm_follow.egg-info
+writing swarm_follow.egg-info/PKG-INFO
+writing dependency_links to swarm_follow.egg-info/dependency_links.txt
+writing entry points to swarm_follow.egg-info/entry_points.txt
+writing requirements to swarm_follow.egg-info/requires.txt
+writing top-level names to swarm_follow.egg-info/top_level.txt
+writing manifest file 'swarm_follow.egg-info/SOURCES.txt'
+reading manifest file 'swarm_follow.egg-info/SOURCES.txt'
+writing manifest file 'swarm_follow.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm-follow.egg-link (link to .)
+Installing follower script to /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/swarm_follow
+
+Installed /home/aqueiros_22/ros2_ws/build/swarm_follow
+running symlink_data
+creating /home/aqueiros_22/ros2_ws/install/swarm_follow/share/ament_index
+creating /home/aqueiros_22/ros2_ws/install/swarm_follow/share/ament_index/resource_index
+creating /home/aqueiros_22/ros2_ws/install/swarm_follow/share/ament_index/resource_index/packages
+symbolically linking /home/aqueiros_22/ros2_ws/build/swarm_follow/resource/swarm_follow -> /home/aqueiros_22/ros2_ws/install/swarm_follow/share/ament_index/resource_index/packages
+symbolically linking /home/aqueiros_22/ros2_ws/build/swarm_follow/package.xml -> /home/aqueiros_22/ros2_ws/install/swarm_follow/share/swarm_follow
+creating /home/aqueiros_22/ros2_ws/install/swarm_follow/share/swarm_follow/launch
+symbolically linking /home/aqueiros_22/ros2_ws/build/swarm_follow/launch/swarm_launch.py -> /home/aqueiros_22/ros2_ws/install/swarm_follow/share/swarm_follow/launch
+creating /home/aqueiros_22/ros2_ws/install/swarm_follow/share/swarm_follow/worlds
+symbolically linking /home/aqueiros_22/ros2_ws/build/swarm_follow/worlds/arena.wbt -> /home/aqueiros_22/ros2_ws/install/swarm_follow/share/swarm_follow/worlds
+creating /home/aqueiros_22/ros2_ws/install/swarm_follow/share/swarm_follow/resource
+symbolically linking /home/aqueiros_22/ros2_ws/build/swarm_follow/resource/robot.urdf -> /home/aqueiros_22/ros2_ws/install/swarm_follow/share/swarm_follow/resource

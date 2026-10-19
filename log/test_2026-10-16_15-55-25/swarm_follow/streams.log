@@ -1,0 +1,95 @@
+[0.201s] Invoking command in '/home/aqueiros_22/ros2_ws/src/swarm_follow': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTEST_ADDOPTS=--tb=short --junit-xml=/home/aqueiros_22/ros2_ws/build/swarm_follow/pytest.xml --junit-prefix=swarm_follow -o cache_dir=/home/aqueiros_22/ros2_ws/build/swarm_follow/.pytest_cache /usr/bin/python3 -m pytest
+[0.769s] ============================= test session starts ==============================
+[0.769s] platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+[0.769s] cachedir: /home/aqueiros_22/ros2_ws/build/swarm_follow/.pytest_cache
+[0.770s] rootdir: /home/aqueiros_22/ros2_ws/src/swarm_follow
+[0.770s] plugins: ament-pep257-0.17.5, ament-copyright-0.17.5, ament-xmllint-0.17.5, ament-lint-0.17.5, launch-testing-3.4.12, launch-testing-ros-0.26.13, ament-flake8-0.17.5, typeguard-4.1.5, colcon-core-0.21.3, cov-4.1.0
+[0.770s] collected 17 items
+[0.770s] 
+[0.776s] test/test_copyright.py s                                                 [  5%]
+[0.965s] test/test_flake8.py F                                                    [ 11%]
+[1.004s] test/test_pep257.py .                                                    [ 17%]
+[1.258s] test/test_vision.py ..............                                       [100%]
+[1.258s] 
+[1.258s] =================================== FAILURES ===================================
+[1.258s] _________________________________ test_flake8 __________________________________
+[1.258s] test/test_flake8.py:23: in test_flake8
+[1.259s]     assert rc == 0, \
+[1.259s] E   AssertionError: Found 9 code style errors / warnings:
+[1.259s] E     ./launch/swarm_launch.py:2:1: I201 Missing newline between import groups. 'from launch import LaunchDescription' is identified as Third Party and 'import os' is identified as Stdlib.
+[1.259s] E     ./launch/swarm_launch.py:3:1: I101 Imported names are in the wrong order. Should be EmitEvent, RegisterEventHandler
+[1.259s] E     ./launch/swarm_launch.py:6:1: I100 Import statements are in the wrong order. 'from ament_index_python.packages import get_package_share_directory' should be before 'from launch.events import Shutdown'
+[1.259s] E     ./launch/swarm_launch.py:8:1: I100 Import statements are in the wrong order. 'from webots_ros2_driver.webots_controller import WebotsController' should be before 'from webots_ros2_driver.webots_launcher import WebotsLauncher'
+[1.259s] E     ./launch/swarm_launch.py:26:63: W292 no newline at end of file
+[1.259s] E     ./swarm_follow/follower_controller.py:2:5: F821 undefined name 'rclpy'
+[1.259s] E     ./swarm_follow/follower_controller.py:3:12: F821 undefined name 'SwarmFollower'
+[1.259s] E     ./swarm_follow/follower_controller.py:4:5: F821 undefined name 'rclpy'
+[1.260s] E     ./swarm_follow/follower_controller.py:6:5: F821 undefined name 'rclpy'
+[1.260s] E   assert 1 == 0
+[1.260s] ----------------------------- Captured stdout call -----------------------------
+[1.260s] 
+[1.260s] ./launch/swarm_launch.py:2:1: I201 Missing newline between import groups. 'from launch import LaunchDescription' is identified as Third Party and 'import os' is identified as Stdlib.
+[1.260s] from launch import LaunchDescription
+[1.260s] ^
+[1.260s] 
+[1.260s] ./launch/swarm_launch.py:3:1: I101 Imported names are in the wrong order. Should be EmitEvent, RegisterEventHandler
+[1.260s] from launch.actions import RegisterEventHandler, EmitEvent
+[1.260s] ^
+[1.260s] 
+[1.260s] ./launch/swarm_launch.py:6:1: I100 Import statements are in the wrong order. 'from ament_index_python.packages import get_package_share_directory' should be before 'from launch.events import Shutdown'
+[1.260s] from ament_index_python.packages import get_package_share_directory
+[1.260s] ^
+[1.260s] 
+[1.260s] ./launch/swarm_launch.py:8:1: I100 Import statements are in the wrong order. 'from webots_ros2_driver.webots_controller import WebotsController' should be before 'from webots_ros2_driver.webots_launcher import WebotsLauncher'
+[1.260s] from webots_ros2_driver.webots_controller import WebotsController
+[1.261s] ^
+[1.261s] 
+[1.261s] ./launch/swarm_launch.py:26:63: W292 no newline at end of file
+[1.261s]     return LaunchDescription([webots, *controllers, shutdown])                                                              ^
+[1.261s] 
+[1.261s] ./swarm_follow/follower_controller.py:2:5: F821 undefined name 'rclpy'
+[1.261s]     rclpy.init(args=args)
+[1.261s]     ^
+[1.261s] 
+[1.262s] ./swarm_follow/follower_controller.py:3:12: F821 undefined name 'SwarmFollower'
+[1.262s]     node = SwarmFollower()
+[1.262s]            ^
+[1.262s] 
+[1.262s] ./swarm_follow/follower_controller.py:4:5: F821 undefined name 'rclpy'
+[1.262s]     rclpy.spin(node)
+[1.262s]     ^
+[1.262s] 
+[1.262s] ./swarm_follow/follower_controller.py:6:5: F821 undefined name 'rclpy'
+[1.262s]     rclpy.shutdown()
+[1.262s]     ^
+[1.263s] 
+[1.263s] 4     F821 undefined name 'rclpy'
+[1.263s] 2     I100 Import statements are in the wrong order. 'from ament_index_python.packages import get_package_share_directory' should be before 'from launch.events import Shutdown'
+[1.263s] 1     I101 Imported names are in the wrong order. Should be EmitEvent, RegisterEventHandler
+[1.263s] 1     I201 Missing newline between import groups. 'from launch import LaunchDescription' is identified as Third Party and 'import os' is identified as Stdlib.
+[1.263s] 1     W292 no newline at end of file
+[1.263s] 
+[1.263s] 10 files checked
+[1.263s] 9 errors
+[1.263s] 
+[1.263s] 'F'-type errors: 4
+[1.263s] 'I'-type errors: 4
+[1.263s] 'W'-type errors: 1
+[1.263s] 
+[1.263s] Checked files:
+[1.263s] 
+[1.263s] * ./setup.py
+[1.263s] * ./test/test_vision.py
+[1.263s] * ./test/test_pep257.py
+[1.263s] * ./test/test_copyright.py
+[1.264s] * ./test/test_flake8.py
+[1.264s] * ./swarm_follow/robot_driver.py
+[1.264s] * ./swarm_follow/__init__.py
+[1.264s] * ./swarm_follow/follower_controller.py
+[1.264s] * ./swarm_follow/vision.py
+[1.264s] * ./launch/swarm_launch.py
+[1.264s] - generated xml file: /home/aqueiros_22/ros2_ws/build/swarm_follow/pytest.xml --
+[1.264s] =========================== short test summary info ============================
+[1.264s] FAILED test/test_flake8.py::test_flake8 - AssertionError: Found 9 code style ...
+[1.264s] =================== 1 failed, 15 passed, 1 skipped in 0.77s ====================
+[1.332s] Invoked command in '/home/aqueiros_22/ros2_ws/src/swarm_follow' returned '1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTEST_ADDOPTS=--tb=short --junit-xml=/home/aqueiros_22/ros2_ws/build/swarm_follow/pytest.xml --junit-prefix=swarm_follow -o cache_dir=/home/aqueiros_22/ros2_ws/build/swarm_follow/.pytest_cache /usr/bin/python3 -m pytest

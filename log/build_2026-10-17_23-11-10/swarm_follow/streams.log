@@ -1,0 +1,49 @@
+[0.560s] Invoking command in '/home/aqueiros_22/ros2_ws/build/swarm_follow': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/aqueiros_22/ros2_ws/build/swarm_follow/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/aqueiros_22/ros2_ws/build/swarm_follow/build
+[0.742s] running develop
+[0.866s] Removing /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm-follow.egg-link (link to .)
+[0.887s] Invoked command in '/home/aqueiros_22/ros2_ws/build/swarm_follow' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/aqueiros_22/ros2_ws/build/swarm_follow/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/aqueiros_22/ros2_ws/build/swarm_follow/build
+[0.888s] Invoking command in '/home/aqueiros_22/ros2_ws/src/swarm_follow': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/aqueiros_22/ros2_ws/build/swarm_follow/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/swarm_follow build --build-base /home/aqueiros_22/ros2_ws/build/swarm_follow/build install --record /home/aqueiros_22/ros2_ws/build/swarm_follow/install.log --install-scripts $base/lib/swarm_follow --single-version-externally-managed install_data --force
+[1.049s] running egg_info
+[1.060s] writing ../../build/swarm_follow/swarm_follow.egg-info/PKG-INFO
+[1.060s] writing dependency_links to ../../build/swarm_follow/swarm_follow.egg-info/dependency_links.txt
+[1.060s] writing entry points to ../../build/swarm_follow/swarm_follow.egg-info/entry_points.txt
+[1.060s] writing requirements to ../../build/swarm_follow/swarm_follow.egg-info/requires.txt
+[1.060s] writing top-level names to ../../build/swarm_follow/swarm_follow.egg-info/top_level.txt
+[1.082s] reading manifest file '../../build/swarm_follow/swarm_follow.egg-info/SOURCES.txt'
+[1.083s] writing manifest file '../../build/swarm_follow/swarm_follow.egg-info/SOURCES.txt'
+[1.083s] running build
+[1.083s] running build_py
+[1.083s] copying swarm_follow/robot_driver.py -> /home/aqueiros_22/ros2_ws/build/swarm_follow/build/lib/swarm_follow
+[1.083s] copying swarm_follow/vision.py -> /home/aqueiros_22/ros2_ws/build/swarm_follow/build/lib/swarm_follow
+[1.083s] copying swarm_follow/pid.py -> /home/aqueiros_22/ros2_ws/build/swarm_follow/build/lib/swarm_follow
+[1.083s] running install
+[1.088s] running install_lib
+[1.099s] creating /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm_follow
+[1.099s] copying /home/aqueiros_22/ros2_ws/build/swarm_follow/build/lib/swarm_follow/robot_driver.py -> /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm_follow
+[1.099s] copying /home/aqueiros_22/ros2_ws/build/swarm_follow/build/lib/swarm_follow/__init__.py -> /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm_follow
+[1.099s] copying /home/aqueiros_22/ros2_ws/build/swarm_follow/build/lib/swarm_follow/follower_controller.py -> /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm_follow
+[1.099s] copying /home/aqueiros_22/ros2_ws/build/swarm_follow/build/lib/swarm_follow/collision_observer.py -> /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm_follow
+[1.099s] copying /home/aqueiros_22/ros2_ws/build/swarm_follow/build/lib/swarm_follow/metrics_report.py -> /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm_follow
+[1.099s] copying /home/aqueiros_22/ros2_ws/build/swarm_follow/build/lib/swarm_follow/metrics_recorder.py -> /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm_follow
+[1.099s] copying /home/aqueiros_22/ros2_ws/build/swarm_follow/build/lib/swarm_follow/vision.py -> /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm_follow
+[1.099s] copying /home/aqueiros_22/ros2_ws/build/swarm_follow/build/lib/swarm_follow/pid.py -> /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm_follow
+[1.099s] byte-compiling /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm_follow/robot_driver.py to robot_driver.cpython-312.pyc
+[1.101s] byte-compiling /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm_follow/__init__.py to __init__.cpython-312.pyc
+[1.101s] byte-compiling /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm_follow/follower_controller.py to follower_controller.cpython-312.pyc
+[1.101s] byte-compiling /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm_follow/collision_observer.py to collision_observer.cpython-312.pyc
+[1.102s] byte-compiling /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm_follow/metrics_report.py to metrics_report.cpython-312.pyc
+[1.103s] byte-compiling /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm_follow/metrics_recorder.py to metrics_recorder.cpython-312.pyc
+[1.104s] byte-compiling /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm_follow/vision.py to vision.cpython-312.pyc
+[1.104s] byte-compiling /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm_follow/pid.py to pid.cpython-312.pyc
+[1.105s] running install_data
+[1.105s] copying resource/swarm_follow -> /home/aqueiros_22/ros2_ws/install/swarm_follow/share/ament_index/resource_index/packages
+[1.105s] copying package.xml -> /home/aqueiros_22/ros2_ws/install/swarm_follow/share/swarm_follow
+[1.105s] copying launch/swarm_launch.py -> /home/aqueiros_22/ros2_ws/install/swarm_follow/share/swarm_follow/launch
+[1.105s] copying worlds/arena.wbt -> /home/aqueiros_22/ros2_ws/install/swarm_follow/share/swarm_follow/worlds
+[1.105s] copying resource/robot.urdf -> /home/aqueiros_22/ros2_ws/install/swarm_follow/share/swarm_follow/resource
+[1.105s] running install_egg_info
+[1.118s] Copying ../../build/swarm_follow/swarm_follow.egg-info to /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages/swarm_follow-0.0.1-py3.12.egg-info
+[1.118s] running install_scripts
+[1.194s] Installing follower script to /home/aqueiros_22/ros2_ws/install/swarm_follow/lib/swarm_follow
+[1.195s] writing list of installed files to '/home/aqueiros_22/ros2_ws/build/swarm_follow/install.log'
+[1.214s] Invoked command in '/home/aqueiros_22/ros2_ws/src/swarm_follow' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/aqueiros_22/ros2_ws/build/swarm_follow/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aqueiros_22/ros2_ws/install/swarm_follow/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/swarm_follow build --build-base /home/aqueiros_22/ros2_ws/build/swarm_follow/build install --record /home/aqueiros_22/ros2_ws/build/swarm_follow/install.log --install-scripts $base/lib/swarm_follow --single-version-externally-managed install_data --force

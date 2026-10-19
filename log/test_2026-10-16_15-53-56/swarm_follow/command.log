@@ -1,0 +1,2 @@
+Invoking command in '/home/aqueiros_22/ros2_ws/src/swarm_follow': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/python3 -m unittest -v
+Invoked command in '/home/aqueiros_22/ros2_ws/src/swarm_follow' returned '5': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/python3 -m unittest -v

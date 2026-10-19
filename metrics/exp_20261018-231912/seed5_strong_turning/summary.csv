@@ -1,7 +1,0 @@
-mode,seed,robot,duration_s,following_time_s,following_pct,mean_abs_bearing_deg,target_losses,robot_collisions,wall_collisions
-strong_turning,5,robot1,60.0,59.968,99.95,0.88,0,0,0
-strong_turning,5,robot2,60.0,59.968,99.95,1.36,0,0,0
-strong_turning,5,robot3,60.0,19.488,32.48,4.57,2,0,1
-strong_turning,5,robot4,60.0,59.968,99.95,1.28,0,0,0
-strong_turning,5,robot5,60.0,57.792,96.32,2.03,0,0,0
-strong_turning,5,all,60.0,51.437,85.73,1.62,2,0,1
