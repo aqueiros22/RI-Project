@@ -1,2 +1,0 @@
-[console_scripts]
-follower = swarm_follow.follower_controller:main
