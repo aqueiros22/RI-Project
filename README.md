@@ -1,7 +1,5 @@
 # RI Project
 
-<descrição curta do projeto>
-
 Simulação em Webots de 5 robôs e-puck (`robot1` … `robot5`) controlados por ROS 2 através do
 `webots_ros2_driver`. Cada robô usa só a sua câmara frontal para detetar outro e-puck e segui-lo.
 
@@ -32,8 +30,6 @@ Instaladas pelo `rosdep` a partir de `src/swarm_follow/package.xml` (pacotes apt
 | `python3-colcon-common-extensions` | 0.3.0 |
 | `python3-rosdep` | 0.27.0 |
 | `cmake` / `g++` | 4.2.3 / 15.2.0 |
-
-No ambiente A: `<versões do ambiente A>`.
 
 ---
 
