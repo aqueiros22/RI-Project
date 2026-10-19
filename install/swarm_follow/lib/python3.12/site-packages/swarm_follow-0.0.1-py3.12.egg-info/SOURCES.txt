@@ -28,5 +28,6 @@ worlds/cenario_1.wbt
 worlds/cenario_2.wbt
 worlds/cenario_3.wbt
 worlds/cenario_4.wbt
+worlds/cenario_5.wbt
 worlds/test.wbt
 worlds/test_2.wbt
